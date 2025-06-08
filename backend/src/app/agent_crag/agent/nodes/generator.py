@@ -8,7 +8,7 @@ from ....core.config import settings
 from ..state import State
 from .prompts import generator_prompt
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=1, api_key=settings.OPENAI_API_KEY)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3, api_key=settings.OPENAI_API_KEY)
 
 parser = StrOutputParser()
 
