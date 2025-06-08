@@ -1,0 +1,62 @@
+services:
+  backend:
+    image: kanta.azurecr.io/carro-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    command: fastapi run src/app/main.py --host 0.0.0.0 --port 8000
+    ports:
+      - 8000:8000
+    env_file:
+      - .env      
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/system/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    environment:
+      - UV_COMPILE_BYTECODE=1
+      - UV_LINK_MODE=copy
+    develop:
+      watch:
+        # only sync source code & main script
+        - action: sync
+          path: ./backend/src/app
+          target: /app/src/app
+
+  frontend:
+    image: kanta.azurecr.io/carro-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    command: ["streamlit", "run", "Home.py"]
+    ports:
+      - 8501:8501
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - BACKEND_SERVER_URL=http://backend:8000
+      - ADMIN_PASSWORD=password123
+    volumes:
+      - ./frontend/assets:/app/assets
+    depends_on:
+      backend:
+        condition: service_healthy
+        restart: true
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend/Home.py
+          target: /app/Home.py
+        - action: sync
+          path: ./frontend/pages
+          target: /app/pages
+        - action: sync
+          path: ./frontend/utils
+          target: /app/utils
+
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,45 @@
+[server]
+enableStaticServing = true
+
+[theme]
+base = "light"
+primaryColor = "#FF5F1F"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5E6C8"
+textColor = "#000000"
+linkColor = "#0011ff"
+borderColor = "#000000"
+showWidgetBorder = true
+baseRadius = "0.3rem"
+font = "CircularSpotifyText"
+
+[theme.sidebar]
+backgroundColor = "#FF5F1F"
+secondaryBackgroundColor = "#F5E6C8"
+borderColor = "#F4F4F4"
+
+
+[[theme.fontFaces]]
+url = "app/static/CircularSpotifyText-Light.otf"
+family = "CircularSpotifyText"
+weight = 300
+
+[[theme.fontFaces]]
+url = "app/static/CircularSpotifyText-Book.otf"
+family = "CircularSpotifyText"
+weight = 400
+
+[[theme.fontFaces]]
+url = "app/static/CircularSpotifyText-Medium.otf"
+family = "CircularSpotifyText"
+weight = 500
+
+[[theme.fontFaces]]
+url = "app/static/CircularSpotifyText-Bold.otf"
+family = "CircularSpotifyText"
+weight = 700
+
+[[theme.fontFaces]]
+url = "app/static/CircularSpotifyText-Black.otf"
+family = "CircularSpotifyText"
+weight = 900
