@@ -4,6 +4,8 @@ CarroGPT is a proof of concept for a customer-facing chatbot developed for **Car
 
 We employ 2 different approaches to build the chatbot: **ReAct Agent** and **Corrective RAG**. The ReAct Agent is a dynamic reasoning agent that can handle complex customer inquiries, while Corrective RAG is a more structured approach that ensures accurate responses by validating retrieved documents.
 
+Visit the [CarroGPT website](https://carro-frontend--0000002.jollywave-f0940ff6.southeastasia.azurecontainerapps.io/) to see the chatbot in action!
+
 ![CRAG](assets/crag.png)
 
 
