@@ -6,7 +6,7 @@ We employ 2 different approaches to build the chatbot: **ReAct Agent** and **Cor
 
 Visit the [CarroGPT website](https://carro-frontend--0000002.jollywave-f0940ff6.southeastasia.azurecontainerapps.io/) to see the chatbot in action!
 
-![CRAG](assets/crag.png)
+![carro](assets/demo.gif)
 
 ## Built With
 * [![Python][Python.svg]][Python-url]
