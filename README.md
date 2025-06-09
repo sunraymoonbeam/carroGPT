@@ -550,7 +550,7 @@ Evaluates the system's robustness against irrelevant or out-of-scope questions a
 
 #### Corrective RAG
 ![Corrective RAG Response](assets/output/error_crag_1.png)
-**Analysis:** Detected irrelevance and politely refused.
+**Analysis:** Detected irrelevance and politely refused. It seems that it is much better at handling prompt injections than ReAct Agent, probably due to the classification node that filters out irrelevant queries before retrieval.
 
 ---
 
@@ -560,11 +560,11 @@ Evaluates the system's robustness against irrelevant or out-of-scope questions a
 
 #### ReAct Agent
 ![ReAct Agent Response](assets/output/error_react_2.png)
-**Analysis:** Drifted into a philosophical reply, ignoring domain constraints.
+**Analysis:** Adhered to instructions and refused to answer the philosophical question.
 
 #### Corrective RAG
 ![Corrective RAG Response](assets/output/error_crag_2.png)
-**Analysis:** Identified the query as irrelevant and declined to answer.
+**Analysis:** Identified the query as irrelevant and declined to answer. 
 
 </details>
 
