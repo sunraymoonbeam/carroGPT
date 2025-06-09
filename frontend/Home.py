@@ -41,7 +41,7 @@ def main():
     st.markdown(
         """
         CarroGPT uses a **Retrieval-Augmented Generation (RAG)** pipeline.
-        We transform your documents into vector embeddings and store them in a _Qdrant_ Vectorstore.
+        We transform your documents into vector embeddings and store them in a vectorstore.
         When a query is made, we retrieve the most relevant context via semantic similarity.
         Our chatbot then uses this context, along with live web data if needed to generate an accurate response.
         """
